@@ -85,24 +85,24 @@ mlp_map = {
     ],
     'teste5.npy': [
         MLPRegressor(
-            hidden_layer_sizes=(500, 250, 125),
-            max_iter=100,
+            hidden_layer_sizes=(300, 260, 210, 150, 90),
+            max_iter=10000,
+            activation='tanh', 
+            solver='adam',
+            learning_rate = 'adaptive',
+            n_iter_no_change=50
+        ), 
+       MLPRegressor(
+            hidden_layer_sizes=(250, 200, 150, 100, 50),
+            max_iter=10000,
             activation='tanh', 
             solver='adam',
             learning_rate = 'adaptive',
             n_iter_no_change=50
         ), 
         MLPRegressor(
-            hidden_layer_sizes=(100, 50, 25),
-            max_iter=1000,
-            activation='tanh', 
-            solver='adam',
-            learning_rate = 'adaptive',
-            n_iter_no_change=50
-        ), 
-        MLPRegressor(
-            hidden_layer_sizes=(500, 250, 125),
-            max_iter=100,
+            hidden_layer_sizes=(300, 240, 180, 120, 60),
+            max_iter=10000,
             activation='tanh', 
             solver='adam',
             learning_rate = 'adaptive',
@@ -111,7 +111,7 @@ mlp_map = {
     ],
 }
 
-for i in range(4, 5):
+for i in range(2, 6):
     filename = f"teste{i}.npy"
     print(f'Carregando Arquivo {filename}')
 
